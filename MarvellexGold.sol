@@ -11,7 +11,6 @@ contract MarvellexGold is ERC20, ERC20Burnable, AccessControl {
     constructor(address initalAccount) ERC20("MarvellexGold", "MLXG") {
         require(initalAccount != address(0), "Initial Account is the zero address");
         _grantRole(DEFAULT_ADMIN_ROLE, initalAccount);
-        _grantRole(PAUSER_ROLE, initalAccount);
         _mint(initalAccount, 10000 * 10 ** decimals());
         _grantRole(MINTER_ROLE, initalAccount);
     }
